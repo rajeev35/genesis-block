@@ -1,11 +1,11 @@
-import { GBButton } from "@/components/common/gb-button";
+import { Navbar } from "@/components/layout/navbar/navbar";
 
 export default function HomePage() {
   return (
-    <main className="container flex min-h-screen items-center justify-center">
-      <GBButton variant="default" size="lg">
-        Genesis Block
-      </GBButton>
-    </main>
+    <>
+      <Navbar />
+
+      <main className="min-h-screen" />
+    </>
   );
 }
