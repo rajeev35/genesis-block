@@ -3,35 +3,42 @@ import { GBHeading } from "@/components/common/gb-heading";
 import { GBSection } from "@/components/common/gb-section";
 import { GBText } from "@/components/common/gb-text";
 
-import { pricingPlans } from "./data";
-import { PricingCard } from "./components/pricing-card";
+import { journalFeatures } from "./data";
+import { JournalCard } from "./components/journal-card";
 
-export function PricingSection() {
+export function JournalSection() {
   return (
     <GBSection>
       <GBContainer>
+
         <div className="mb-14 text-center">
+
           <GBHeading level={2}>
-            Choose Your Plan
+            Trading Journal
           </GBHeading>
 
           <GBText
             variant="muted"
             className="mx-auto mt-4 max-w-2xl text-center"
           >
-            Start free and upgrade anytime to unlock premium trading tools,
-            expert analysis and exclusive community access.
+            Build consistency by tracking every trade,
+            analyzing your performance,
+            and improving your trading psychology.
           </GBText>
+
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-3">
-          {pricingPlans.map((plan) => (
-            <PricingCard
-              key={plan.name}
-              plan={plan}
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+
+          {journalFeatures.map((feature) => (
+            <JournalCard
+              key={feature.title}
+              feature={feature}
             />
           ))}
+
         </div>
+
       </GBContainer>
     </GBSection>
   );

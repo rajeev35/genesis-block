@@ -3,32 +3,32 @@ import { GBHeading } from "@/components/common/gb-heading";
 import { GBSection } from "@/components/common/gb-section";
 import { GBText } from "@/components/common/gb-text";
 
-import { pricingPlans } from "./data";
-import { PricingCard } from "./components/pricing-card";
+import { communityPlatforms } from "./data";
+import { CommunityCard } from "./components/community-card";
 
-export function PricingSection() {
+export function CommunitySection() {
   return (
     <GBSection>
       <GBContainer>
         <div className="mb-14 text-center">
           <GBHeading level={2}>
-            Choose Your Plan
+            Join Our Trading Community
           </GBHeading>
 
           <GBText
             variant="muted"
             className="mx-auto mt-4 max-w-2xl text-center"
           >
-            Start free and upgrade anytime to unlock premium trading tools,
-            expert analysis and exclusive community access.
+            Learn together, share ideas and receive premium market updates
+            with thousands of traders.
           </GBText>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-3">
-          {pricingPlans.map((plan) => (
-            <PricingCard
-              key={plan.name}
-              plan={plan}
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {communityPlatforms.map((platform) => (
+            <CommunityCard
+              key={platform.name}
+              platform={platform}
             />
           ))}
         </div>
