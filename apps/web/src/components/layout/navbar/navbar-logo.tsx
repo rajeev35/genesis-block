@@ -9,7 +9,7 @@ export function NavbarLogo() {
 
       <div className="flex flex-col">
         <span className="font-[family:var(--font-heading)] text-lg font-bold text-white">
-          Genesis Block
+          Golu Vlogs
         </span>
 
         <span className="text-xs text-zinc-500">
