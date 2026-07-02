@@ -173,3 +173,7 @@ animation-delay:2s;
 animation-delay:4s;
 
 }
+
+html {
+  scroll-behavior: smooth;
+}
