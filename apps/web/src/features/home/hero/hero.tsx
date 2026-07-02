@@ -1,3 +1,5 @@
+import { FadeIn } from "@/components/animations";
+
 import { GradientBackground } from "@/components/background/gradient-background";
 import { GlowBackground } from "@/components/background/glow-background";
 import { GridBackground } from "@/components/background/grid-background";
@@ -13,7 +15,7 @@ import { DashboardPreview } from "./components/dashboard-preview";
 
 export function HeroSection() {
   return (
-    <GBSection className="relative overflow-hidden pt-24">
+    <GBSection className="relative overflow-hidden">
 
       {/* Background */}
       <GradientBackground />
@@ -24,47 +26,51 @@ export function HeroSection() {
         <div className="grid items-center gap-16 lg:grid-cols-2">
 
           {/* Left Side */}
-          <div>
-            <GBBadge>
-              🚀 India's Trading Community
-            </GBBadge>
+          <FadeIn>
+            <div>
+              <GBBadge>
+                🚀 India's Trading Community
+              </GBBadge>
 
-            <GBHeading
-              level={1}
-              className="mt-6 text-5xl lg:text-7xl"
-            >
-              Learn.
-              <br />
-              Trade.
-              <br />
-              Grow.
-            </GBHeading>
+              <GBHeading
+                level={1}
+                className="mt-6 text-5xl lg:text-7xl"
+              >
+                Learn.
+                <br />
+                Trade.
+                <br />
+                Grow.
+              </GBHeading>
 
-            <GBText
-              variant="muted"
-              className="mt-8 max-w-xl text-lg"
-            >
-              Professional Trading Education,
-              Premium Signals,
-              Gold Analysis,
-              Trading Journal,
-              and Community —
-              all in one platform.
-            </GBText>
+              <GBText
+                variant="muted"
+                className="mt-8 max-w-xl text-lg"
+              >
+                Professional Trading Education,
+                Premium Signals,
+                Gold Analysis,
+                Trading Journal,
+                and Community —
+                all in one platform.
+              </GBText>
 
-            <div className="mt-10 flex flex-wrap gap-4">
-              <GBButton>
-                Start Learning
-              </GBButton>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <GBButton>
+                  Start Learning
+                </GBButton>
 
-              <GBButton variant="outline">
-                Explore Signals
-              </GBButton>
+                <GBButton variant="outline">
+                  Explore Signals
+                </GBButton>
+              </div>
             </div>
-          </div>
+          </FadeIn>
 
           {/* Right Side */}
-          <DashboardPreview />
+          <FadeIn delay={0.2}>
+            <DashboardPreview />
+          </FadeIn>
 
         </div>
       </GBContainer>
