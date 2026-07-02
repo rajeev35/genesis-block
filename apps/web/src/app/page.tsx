@@ -10,6 +10,8 @@ import { CommunitySection } from "@/features/home/community";
 import { PricingSection } from "@/features/home/pricing/pricing";
 import { TestimonialsSection } from "@/features/home/testimonials";
 import { FAQSection } from "@/features/home/faq";
+import { CTASection } from "@/features/home/cta";
+import { Footer } from "@/features/home/footer";
 
 export default function HomePage() {
   return (
@@ -26,6 +28,8 @@ export default function HomePage() {
       <PricingSection />
       <TestimonialsSection />
       <FAQSection />
+      <CTASection />
+      <Footer />
     </>
   );
 }
