@@ -4,6 +4,8 @@ import {
   Signal,
 } from "lucide-react";
 
+import { StaggerContainer, StaggerItem } from "@/components/animations";
+
 import { GBContainer } from "@/components/common/gb-container";
 import { GBFeatureCard } from "@/components/common/gb-feature-card";
 import { GBHeading } from "@/components/common/gb-heading";
@@ -15,7 +17,7 @@ export function FeaturesSection() {
     <GBSection>
       <GBContainer>
 
-        <div className="mb-14 text-center">
+        <div className="mx-auto mb-14 max-w-2xl text-center">
 
           <GBHeading level={2}>
             Everything You Need
@@ -23,34 +25,47 @@ export function FeaturesSection() {
 
           <GBText
             variant="muted"
-            className="mt-4"
+            className="mx-auto mt-4 text-base sm:text-lg"
           >
             One Platform for Every Trader.
           </GBText>
 
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <StaggerContainer
+          className="
+            grid
+            gap-6
+            sm:grid-cols-2
+            lg:grid-cols-3
+          "
+        >
 
-          <GBFeatureCard
-            icon={<BookOpen size={28} />}
-            title="Trading Academy"
-            description="Professional trading education from beginner to advanced."
-          />
+          <StaggerItem>
+            <GBFeatureCard
+              icon={<BookOpen size={28} />}
+              title="Trading Academy"
+              description="Professional trading education from beginner to advanced."
+            />
+          </StaggerItem>
 
-          <GBFeatureCard
-            icon={<Signal size={28} />}
-            title="Premium Signals"
-            description="High accuracy trading signals with proper risk management."
-          />
+          <StaggerItem>
+            <GBFeatureCard
+              icon={<Signal size={28} />}
+              title="Premium Signals"
+              description="High accuracy trading signals with proper risk management."
+            />
+          </StaggerItem>
 
-          <GBFeatureCard
-            icon={<CandlestickChart size={28} />}
-            title="Gold Analysis"
-            description="Daily XAUUSD market analysis with key levels."
-          />
+          <StaggerItem>
+            <GBFeatureCard
+              icon={<CandlestickChart size={28} />}
+              title="Gold Analysis"
+              description="Daily XAUUSD market analysis with key levels."
+            />
+          </StaggerItem>
 
-        </div>
+        </StaggerContainer>
 
       </GBContainer>
     </GBSection>

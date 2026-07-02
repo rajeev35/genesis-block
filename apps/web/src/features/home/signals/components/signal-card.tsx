@@ -14,9 +14,20 @@ export function SignalCard({ signal }: SignalCardProps) {
   const isBuy = signal.type === "BUY";
 
   return (
-    <GBCard className="transition-all duration-300 hover:-translate-y-2 hover:border-yellow-500/40">
+    <GBCard
+      className="
+        h-full
+        border-white/10
+        transition-all
+        duration-300
+        hover:-translate-y-2
+        hover:border-[var(--primary)]
+      "
+    >
       <div className="flex items-center justify-between">
-        <GBHeading level={4}>{signal.pair}</GBHeading>
+        <GBHeading level={4}>
+          {signal.pair}
+        </GBHeading>
 
         <span
           className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold ${
@@ -25,32 +36,41 @@ export function SignalCard({ signal }: SignalCardProps) {
               : "bg-red-500/15 text-red-400"
           }`}
         >
-          {isBuy ? <TrendingUp size={14} /> : <TrendingDown size={14} />}
+          {isBuy ? (
+            <TrendingUp size={14} />
+          ) : (
+            <TrendingDown size={14} />
+          )}
+
           {signal.type}
         </span>
       </div>
 
-      <div className="mt-6 space-y-2 text-sm">
-        <div className="flex justify-between">
+      <div className="mt-6 space-y-3 text-sm">
+
+        <div className="flex items-center justify-between">
           <GBText variant="muted">Entry</GBText>
-          <span>{signal.entry}</span>
+          <span className="font-medium">{signal.entry}</span>
         </div>
 
-        <div className="flex justify-between">
+        <div className="flex items-center justify-between">
           <GBText variant="muted">Target</GBText>
-          <span>{signal.target}</span>
+          <span className="font-medium">{signal.target}</span>
         </div>
 
-        <div className="flex justify-between">
+        <div className="flex items-center justify-between">
           <GBText variant="muted">Stop Loss</GBText>
-          <span>{signal.stopLoss}</span>
+          <span className="font-medium">{signal.stopLoss}</span>
         </div>
+
       </div>
 
-      <div className="mt-6 rounded-xl bg-yellow-500/10 p-3 text-center">
-        <GBText variant="muted">Accuracy</GBText>
+      <div className="mt-6 rounded-xl border border-yellow-500/20 bg-yellow-500/10 p-4 text-center">
+        <GBText variant="muted">
+          Accuracy
+        </GBText>
 
-        <p className="mt-1 text-xl font-bold text-yellow-400">
+        <p className="mt-1 text-2xl font-bold text-yellow-400">
           {signal.accuracy}
         </p>
       </div>

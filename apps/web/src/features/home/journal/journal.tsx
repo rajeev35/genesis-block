@@ -1,17 +1,22 @@
+import {
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/animations";
+
 import { GBContainer } from "@/components/common/gb-container";
 import { GBHeading } from "@/components/common/gb-heading";
 import { GBSection } from "@/components/common/gb-section";
 import { GBText } from "@/components/common/gb-text";
 
-import { journalFeatures } from "./data";
 import { JournalCard } from "./components/journal-card";
+import { journalFeatures } from "./data";
 
 export function JournalSection() {
   return (
     <GBSection>
       <GBContainer>
 
-        <div className="mb-14 text-center">
+        <div className="mx-auto mb-14 max-w-2xl text-center">
 
           <GBHeading level={2}>
             Trading Journal
@@ -19,7 +24,7 @@ export function JournalSection() {
 
           <GBText
             variant="muted"
-            className="mx-auto mt-4 max-w-2xl text-center"
+            className="mx-auto mt-4 text-base sm:text-lg"
           >
             Build consistency by tracking every trade,
             analyzing your performance,
@@ -28,16 +33,22 @@ export function JournalSection() {
 
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <StaggerContainer
+          className="
+            grid
+            gap-6
+            sm:grid-cols-2
+            xl:grid-cols-4
+          "
+        >
 
           {journalFeatures.map((feature) => (
-            <JournalCard
-              key={feature.title}
-              feature={feature}
-            />
+            <StaggerItem key={feature.title}>
+              <JournalCard feature={feature} />
+            </StaggerItem>
           ))}
 
-        </div>
+        </StaggerContainer>
 
       </GBContainer>
     </GBSection>

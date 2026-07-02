@@ -5,6 +5,11 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
+import {
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/animations";
+
 import { GBContainer } from "@/components/common/gb-container";
 import { GBHeading } from "@/components/common/gb-heading";
 import { GBSection } from "@/components/common/gb-section";
@@ -47,24 +52,37 @@ export function AcademySection() {
   return (
     <GBSection>
       <GBContainer>
-        <div className="mb-14 text-center">
+
+        <div className="mx-auto mb-14 max-w-2xl text-center">
+
           <GBHeading level={2}>
             Trading Academy
           </GBHeading>
 
-          <GBText variant="muted" className="mt-4">
+          <GBText
+            variant="muted"
+            className="mx-auto mt-4 text-base sm:text-lg"
+          >
             Learn from structured courses designed for every trader.
           </GBText>
+
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <StaggerContainer
+          className="
+            grid
+            gap-6
+            sm:grid-cols-2
+            xl:grid-cols-4
+          "
+        >
           {courses.map((course) => (
-            <AcademyCard
-              key={course.title}
-              {...course}
-            />
+            <StaggerItem key={course.title}>
+              <AcademyCard {...course} />
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
+
       </GBContainer>
     </GBSection>
   );
