@@ -8,6 +8,8 @@ import { GoldAnalysisSection } from "@/features/home/gold-analysis";
 import { JournalSection } from "@/features/home/journal";
 import { CommunitySection } from "@/features/home/community";
 import { PricingSection } from "@/features/home/pricing/pricing";
+import { TestimonialsSection } from "@/features/home/testimonials";
+import { FAQSection } from "@/features/home/faq";
 
 export default function HomePage() {
   return (
@@ -22,6 +24,8 @@ export default function HomePage() {
       <JournalSection />
       <CommunitySection />
       <PricingSection />
+      <TestimonialsSection />
+      <FAQSection />
     </>
   );
 }
